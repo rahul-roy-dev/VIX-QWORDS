@@ -1,0 +1,100 @@
+#mode {
+    display: none;
+}
+body {
+    -webkit-transition: background-color .5s ease;
+    transition: background-color .5s ease;
+}
+#switch {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: absolute;
+    z-index: -1;
+    left: 110px;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #fde673;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+    -webkit-transition: background-color .5s ease;
+    transition: background-color .5s ease;
+    font-size: 15px;
+}
+#switch:before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    background: #ffdf5a;
+    -webkit-transition: border-radius .5s ease, background-color .5s ease, width .5s ease, -webkit-transform .5s ease;
+    transition: border-radius .5s ease, background-color .5s ease, width .5s ease, -webkit-transform .5s ease;
+    transition: border-radius .5s ease, background-color .5s ease, width .5s ease, transform .5s ease;
+    transition: border-radius .5s ease, background-color .5s ease, width .5s ease, transform .5s ease, -webkit-transform .5s ease;
+}
+#switch:after {
+    content: "LIGHT MODE?";
+    color: #fff;
+    white-space: nowrap;
+    text-indent: 15px;
+    font-weight: 900;
+    font-size: 15px;
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid #ffdf5a;
+    -webkit-box-shadow: 0 0 0 0 #fdf4a9, 0 0 0 3px #ffffff00, 0 0 0 1700px #000;
+    box-shadow: 0 0 0 0 #fdf4a9, 0 0 0 3px #ffffff00, 0 0 0 1700px #000;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: border-color .5s ease, -webkit-box-shadow .5s ease;
+    transition: border-color .5s ease, -webkit-box-shadow .5s ease;
+    transition: border-color .5s ease, box-shadow .5s ease;
+    transition: border-color .5s ease, box-shadow .5s ease, -webkit-box-shadow .5s ease;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: inherit;
+    align-self: inherit;
+    -webkit-box-align: inherit;
+    -ms-flex-align: inherit;
+    align-items: inherit;
+}
+
+body.night #switch:before {
+    background: #000;
+    border-radius: 50%;
+    width: 150%;
+    -webkit-transform: translate(-5%,  -35%) rotate(-25deg);
+    transform: translate(-5%,  -35%) rotate(-25deg);
+}
+body.night #switch:after {
+    content: "DARK MODE";
+    color: #000;
+    text-indent: 15px;
+    font-weight: 900;
+    font-size: 15px;
+    -webkit-box-shadow: 0 0 0 0 #fdf4a9, 0 0 0 0 #faf5ff, 0 0 0 0px #fff, 0 0 0 100px #ffffff;
+    box-shadow: 0 0 0 0 #fdf4a9, 0 0 0 0 #faf5ff, 0 0 0 0px #fff, 0 0 0 100px #ffffff;
+    border-color: #000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: inherit;
+    align-self: inherit;
+    -webkit-box-align: inherit;
+    -ms-flex-align: inherit;
+    align-items: inherit;
+}

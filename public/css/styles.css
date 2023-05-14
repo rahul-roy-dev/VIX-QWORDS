@@ -1,0 +1,139 @@
+html {
+  --body:  #ffffff;
+  --base:  #ffffff;
+  --white:  #ffffff;
+  --black:  #1e1b1e;
+  --black-light:  #212121;
+  --secondary:  #bd1e1e;
+  --accent:  #f65718;
+  --accent-light:  #fda85a;
+  --accent-dark:  #c53912;
+  --h1:  #da4201;
+  --h2:  #ff693c;
+  --text:  #000000;
+  --link:  #8e240a;
+  --card:  #dd5b0b;
+  --base-font:  "Montserrat",  sans-serif;
+  --overlay:  unset;
+  --difference:  unset;
+  --contrast:  #ff852e;
+  --contrastmenu:  #ffffff;
+}
+html[data-theme=dark], .dark-theme {
+  background-color: #262626;
+  --body:  #2b2b2b;
+  --base:  #f4491a54;
+  --white:  #000000;
+  --black:  #000000;
+  --black-dark:  #ffffff;
+  --secondary-color:  #f3a94e;
+  --accent-color:  #a21111;
+  --accent-light:  #ed892b;
+  --accent-dark:  #e6a420;
+  --h1:  #e65423;
+  --h2:  #ffffff;
+  --text:  #f3f3f3;
+  --link:  #c83311;
+  --card:  #ea6d14;
+  --overlay:  overlay;
+  --difference:  difference;
+  --contrast:  #000000;
+  --contrastmenu:  #ffffff;
+}
+html.transition, html.transition *, html.transition *:before, html.transition *:after {
+  -webkit-transition: cubic-bezier(0.68,  -0.55,  0.27,  1.55) 420ms !important;
+  transition: cubic-bezier(0.68,  -0.55,  0.27,  1.55) 420ms !important;
+  -webkit-transition-delay: 0 !important;
+  transition-delay: 0 !important;
+}
+
+
+
+
+
+
+
+#home {
+border-bottom: 4px solid var(--accent);
+transition: border-bottom 2s;
+
+}
+
+
+.setcontent {
+  padding: 40px;
+  width: 100%;
+  display: flex;
+}
+
+.horizontal {
+  flex-direction: row;
+}
+
+.parent {
+position: relative;
+width: auto;
+height: auto;
+overflow: hidden;
+}
+
+
+
+.rocket {
+  
+z-index: 99;
+position: absolute;
+bottom: 90px; /* Start position, below the parent div */
+left: 50%; /* Center the rocket horizontally */
+transform: translateX(-50%);
+animation: moveUp 2s linear forwards; /* 3s animation time, linear timing function */
+}
+
+.main-container, .navbar {
+  opacity: 0; /* Initially hidden */
+  animation: fadeIn 1s linear forwards;
+  animation-delay: 2.0s; /* Adjust this value to match the delay for the child to appear */
+
+}
+
+@keyframes fadeIn {
+  from { opacity: 0;}
+  to { opacity: 1;  }
+}
+
+@keyframes moveUp {
+  from { width:300px; height: auto;}
+to {
+bottom: 100%;  width:500px; height: auto;/* End position, above the parent div */
+
+}
+}
+
+body {
+  animation: colorUp 0.2s linear backwards; /* 3s animation time, linear timing function */
+  animation-delay: 1.0s; /* Adjust this value to match the delay for the child to appear */
+
+}
+@keyframes colorUp {
+  from { background-color: #1e1e1e;}
+to {
+background-color: #ffffff; /* End position, above the parent div */
+}
+}
+
+#sky {
+  background-color: #ffffff;
+  height: 100vh;
+  background-image: url(img/bg.svg);
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position-x: right;
+  background-position-y: -30%;
+  background-attachment: fixed;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  
+}
